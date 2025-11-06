@@ -13,45 +13,20 @@
       font-family: 'Vazirmatn', sans-serif;
       background: url('https://i.postimg.cc/Xvd3tRj4/56.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: white;
       height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .container {
-      display: grid;
-      grid-template-areas:
-        "telegram-chat telegram-channel"
-        "eitaa instagram whatsapp";
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 60px;
-      width: 100%;
-      max-width: 700px;
-      text-align: center;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        grid-template-areas:
-          "telegram-chat"
-          "telegram-channel"
-          "eitaa"
-          "instagram"
-          "whatsapp";
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
+      overflow: hidden;
+      color: white;
+      position: relative;
     }
 
     .icon-link {
+      position: absolute;
       text-decoration: none;
       color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
+      font-size: 18px;
       transition: transform 0.3s;
     }
 
@@ -62,43 +37,54 @@
     .icon-link img {
       width: 80px;
       height: 80px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       filter: brightness(0) invert(1);
     }
 
-    .telegram-channel { grid-area: telegram-channel; }
-    .telegram-chat { grid-area: telegram-chat; }
-    .whatsapp { grid-area: whatsapp; }
-    .instagram { grid-area: instagram; }
-    .eitaa { grid-area: eitaa; }
+    /* موقعیت دقیق آیکون‌ها */
+    .telegram-channel { top: 15%; right: 10%; }
+    .telegram-chat { top: 15%; left: 10%; }
+    .whatsapp { bottom: 10%; right: 10%; }
+    .instagram { bottom: 8%; left: 50%; transform: translateX(-50%); }
+    .eitaa { bottom: 10%; left: 10%; }
+
+    @media (max-width: 768px) {
+      .icon-link img { width: 60px; height: 60px; }
+      .icon-link { font-size: 16px; }
+      .telegram-channel { top: 10%; right: 8%; }
+      .telegram-chat { top: 10%; left: 8%; }
+      .whatsapp { bottom: 8%; right: 8%; }
+      .instagram { bottom: 6%; left: 50%; transform: translateX(-50%); }
+      .eitaa { bottom: 8%; left: 8%; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="https://t.me/parsehprintinghouse" class="icon-link telegram-channel" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram Channel" />
-      کانال تلگرام
-    </a>
 
-    <a href="https://t.me/parseh_printing_house" class="icon-link telegram-chat" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram Chat" />
-      گفت‌وگوی تلگرام
-    </a>
+  <a href="https://t.me/parsehprintinghouse" class="icon-link telegram-channel" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram Channel" />
+    کانال تلگرام
+  </a>
 
-    <a href="https://wa.me/qr/MSPU7UJQKM3PI1" class="icon-link whatsapp" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
-      واتساپ
-    </a>
+  <a href="https://t.me/parseh_printing_house" class="icon-link telegram-chat" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram Chat" />
+    گفت‌وگوی تلگرام
+  </a>
 
-    <a href="https://www.instagram.com/parseh.printing?igsh=MXExbnQ3N3pwbzZ3aA==" class="icon-link instagram" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
-      اینستاگرام
-    </a>
+  <a href="https://wa.me/qr/MSPU7UJQKM3PI1" class="icon-link whatsapp" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+    واتساپ
+  </a>
 
-    <a href="https://eitaa.com/Parseh_printing_center" class="icon-link eitaa" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Eitaa_Logo.svg" alt="Eitaa" />
-      ایتا
-    </a>
-  </div>
+  <a href="https://www.instagram.com/parseh.printing?igsh=MXExbnQ3N3pwbzZ3aA==" class="icon-link instagram" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+    اینستاگرام
+  </a>
+
+  <a href="https://eitaa.com/Parseh_printing_center" class="icon-link eitaa" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Eitaa_Logo.svg" alt="Eitaa" />
+    ایتا
+  </a>
+
 </body>
 </html>
