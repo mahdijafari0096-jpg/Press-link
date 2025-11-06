@@ -3,216 +3,167 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>مرکز چاپ پارسه — کارت لینک</title>
+<title>لینک‌های مرکز چاپ پرسه</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-  /* اندازهٔ صفحه: A4 (برای چاپ/پی‌دی‌اف) */
   :root{
-    --telegram1:#2a9df4;
-    --telegram2:#1683df;
-    --whatsapp:#25d366;
-    --instagram1:#f58529;
-    --instagram2:#dd2a7b;
-    --eitaa1:#ff7a00;
-    --card-bg: rgba(255,255,255,0.85);
+    --icon-size:72px;      /* اندازه آیکون — می‌توانید کم/زیاد کنید */
+    --label-size:14px;
+    --shadow: 0 6px 18px rgba(0,0,0,0.18);
   }
 
-  /* full-screen centering (for preview) */
-  html,body{height:100%;margin:0;background:#fff;display:flex;align-items:center;justify-content:center;font-family: Vazirmatn, Tahoma, Arial, sans-serif;}
+  html,body{
+    height:100%;
+    margin:0;
+    font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+    background: #fff;
+  }
 
-  /* A4 sheet */
-  .sheet{
-    width:210mm;
-    height:297mm;
-    box-shadow:0 12px 40px rgba(0,0,0,0.18);
-    border-radius:8px;
-    overflow:hidden;
+  /* کانتینر کامل که شبیه پوستر رفتار کند */
+  .poster {
     position:relative;
-    /* use the provided logo image as a subtle background pattern */
-    background-image: url("https://s6.uupload.ir/files/img_20251106_115257_206_mogj.jpg");
+    width:100%;
+    min-height:100vh;
+    /* پس‌زمینه ثابت (پوستر) — از لینک شما */
+    background-image: url("https://i.ibb.co/XX3qv1X/your-bg.jpg");
+    /* توضیح: اگر i.ibb.co لینک مستقیم تصویر را بدهد، همان را جایگذاری کنید.
+       در غیر این صورت، اگر تصویر مستقیماً از ibb.co نمایش داده نمی‌شود،
+       آدرس مستقیم تصویر را (مثلاً https://i.ibb.co/...) جایگزین کنید. */
     background-size: cover;
-    background-position: center top;
+    background-position: center center;
+    background-attachment: fixed; /* مهم: ثابت بودن پس‌زمینه */
+    overflow:hidden;
   }
 
-  /* overlay to slightly dim background for readability */
-  .sheet::before{
-    content:"";
-    position:absolute; inset:0;
-    background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.28));
+  /* لایه محافظ (اختیاری برای خوانایی) - کم رنگ تا پس‌زمینه مشخص بماند */
+  .overlay {
+    position:absolute;
+    inset:0;
+    background: rgba(0,0,0,0.00); /* اگر خواستی کمی تیره‌تر کن (مثلاً 0.06) */
     pointer-events:none;
   }
 
-  .content{
-    position:relative;
-    z-index:2;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-  }
-
-  /* TOP half: big logo + title */
-  .top{
-    flex: 0 0 50%;
+  /* بلوک آیکون‌ها (همه با position:absolute) */
+  .btn {
+    position:absolute;
     display:flex;
     flex-direction:column;
     align-items:center;
-    justify-content:center;
-    padding:28px 20px 8px 20px;
-  }
-
-  .logo-wrap{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:100%;
-  }
-
-  .logo{
-    max-height:42%;
-    max-width:80%;
-    object-fit:contain;
-    border-radius:10px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-    background: rgba(255,255,255,0.05);
-  }
-
-  .title{
-    margin-top:18px;
-    text-align:center;
-    color:#1a1a1a;
-    font-weight:700;
-    font-size:20px;
-    line-height:1.05;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.6);
-  }
-
-  .title .line1{display:block}
-  .title .line2{display:block; margin-top:6px; font-weight:600; color:#333; font-size:18px}
-
-  /* bottom half: buttons */
-  .bottom{
-    flex: 1 0 50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:22px 24px;
-  }
-
-  .buttons {
-    width:100%;
-    max-width:560px;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap:14px;
-    align-items:center;
-    justify-items:center;
-  }
-
-  /* instagram spans two columns and centered bottom-middle */
-  .btn.instagram { grid-column: 1 / -1; justify-self:center; width:60%; max-width:360px; }
-
-  a.button{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    padding:12px 18px;
-    border-radius:999px;
-    color:#fff;
     text-decoration:none;
-    font-weight:700;
-    font-size:16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    transition: transform .12s ease, box-shadow .12s ease;
-    width:100%;
+    color:#fff;
+    text-align:center;
+    width:calc(var(--icon-size) + 10px);
+    transition: transform .12s ease, filter .12s ease;
   }
-  a.button:active{ transform: translateY(1px); }
-  .ico { width:22px; height:22px; display:inline-flex; align-items:center; justify-content:center; flex:0 0 22px; }
-
-  .telegram{ background: linear-gradient(180deg, var(--telegram1), var(--telegram2)); }
-  .telegram.chat{ background: linear-gradient(180deg,#4aa0ff,#1683df); }
-  .whatsapp{ background: linear-gradient(180deg, var(--whatsapp), #12b35a); }
-  .instagram{ background: linear-gradient(45deg, var(--instagram1), var(--instagram2)); }
-  .eitaa{ background: linear-gradient(180deg, var(--eitaa1), #ff9b1a); }
-
-  /* responsive preview shrink */
-  @media (max-width:900px){
-    .sheet{width:95vw;height:140vw}
-    .btn.instagram{ width:80% }
+  .btn:active{ transform: translateY(2px); }
+  .btn .icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:16px;
+    box-shadow: var(--shadow);
+    background: rgba(0,0,0,0.28); /* زمینه تیرهٔ آیکون تا سفید درخشان دیده شود */
+  }
+  .btn .label {
+    margin-top:8px;
+    font-size: var(--label-size);
+    font-weight:600;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.35);
   }
 
-  /* print: remove shadows, ensure exact size */
+  /* موقعیت‌ها (با درصد) */
+  /* بالا راست — کانال تلگرام */
+  .pos-top-right { top:8%; right:8%; transform: translateZ(0); }
+  /* بالا چپ — گفت‌وگو تلگرام */
+  .pos-top-left  { top:8%; left:8%; transform: translateZ(0); }
+  /* پایین راست — واتساپ */
+  .pos-bottom-right { bottom:8%; right:8%; transform: translateZ(0); }
+  /* پایین وسط — اینستاگرام */
+  .pos-bottom-center { bottom:8%; left:50%; transform: translateX(-50%); }
+  /* پایین چپ — ایتا */
+  .pos-bottom-left { bottom:8%; left:8%; transform: translateZ(0); }
+
+  /* واکنش‌گرایی: اندازه آیکون در موبایل کوچک‌تر شود */
+  @media (max-width:540px){
+    :root { --icon-size:56px; --label-size:13px; }
+    .pos-top-right, .pos-top-left { top:6%; }
+    .pos-bottom-right, .pos-bottom-left, .pos-bottom-center { bottom:6%; }
+  }
+
+  /* برای چاپ: حذف افکت‌های اضافی و تنظیم دقیق */
   @media print{
-    html,body{background:white}
-    .sheet{box-shadow:none;border-radius:0;page-break-after:always}
-    .buttons{gap:12px}
-    .logo{box-shadow:none}
+    .poster { background-attachment: scroll; } /* مرورگرها در چاپ fixed را متفاوت هندل می‌کنند */
   }
-
 </style>
 </head>
 <body>
-  <div class="sheet" role="document" aria-label="کارت لینک مرکز چاپ پرسه">
-    <div class="content">
-      <div class="top">
-        <div class="logo-wrap" aria-hidden="true">
-          <!-- بزرگنمایی لوگو: از همان تصویر استفاده شده -->
-          <img class="logo" src="https://s6.uupload.ir/files/img_20251106_115257_206_mogj.jpg" alt="لوگو مرکز چاپ پارسه">
-        </div>
+  <div class="poster" role="main" aria-label="پوستر لینک‌های مرکز چاپ پرسه">
+    <div class="overlay" aria-hidden="true"></div>
 
-        <div class="title" aria-hidden="false">
-          <span class="line1">پارسه ، نامی به بلندای</span>
-          <span class="line2">تاریخ</span>
-        </div>
+    <!-- بالا راست: کانال تلگرام -->
+    <a class="btn pos-top-right" href="https://t.me/parsehprintinghouse" target="_blank" rel="noopener noreferrer" aria-label="کانال تلگرام">
+      <div class="icon" aria-hidden="true">
+        <!-- telegram white svg -->
+        <svg width="44" height="44" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
+          <path d="M210 36L26 113c-10 3-10 8 0 11l45 14 16 50c2 7 5 9 11 6l38-27 62 45c11 6 19 3 22-10L230 46c3-13-4-19-20-10z" fill="#fff"/>
+        </svg>
       </div>
+      <div class="label">تلگرام — کانال</div>
+    </a>
 
-      <div class="bottom">
-        <div class="buttons" role="navigation" aria-label="لینک‌های ارتباطی">
-
-          <!-- کانال تلگرام -->
-          <a class="button telegram" href="https://t.me/parsehprintinghouse" target="_blank" rel="noopener noreferrer" aria-label="کانال تلگرام">
-            <span class="ico" aria-hidden="true">
-              <!-- white telegram icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="22" height="22" fill="#fff"><path d="M210 36L26 113c-10 3-10 8 0 11l45 14 16 50c2 7 5 9 11 6l38-27 62 45c11 6 19 3 22-10L230 46c3-13-4-19-20-10z"/></svg>
-            </span>
-            کانال تلگرام
-          </a>
-
-          <!-- گفت‌وگوی تلگرام -->
-          <a class="button telegram chat" href="https://t.me/parseh_printing_house" target="_blank" rel="noopener noreferrer" aria-label="گفت‌وگوی تلگرام">
-            <span class="ico" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="22" height="22" fill="#fff"><path d="M210 36L26 113c-10 3-10 8 0 11l45 14 16 50c2 7 5 9 11 6l38-27 62 45c11 6 19 3 22-10L230 46c3-13-4-19-20-10z"/></svg>
-            </span>
-            گفت‌وگوی تلگرام
-          </a>
-
-          <!-- واتساپ -->
-          <a class="button whatsapp" href="https://wa.me/qr/MSPU7UJQKM3PI1" target="_blank" rel="noopener noreferrer" aria-label="واتساپ">
-            <span class="ico" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M20.52 3.48A11.95 11.95 0 0012 0C5.37 0 .02 5.36.02 12a11.9 11.9 0 002.07 6.58L0 24l5.6-1.46A11.95 11.95 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.19-3.48-8.52z"/><path d="M12.004 2.001c-5.523 0-9.998 4.475-9.998 9.999 0 1.754.405 3.453 1.176 4.977L3 22l4.239-1.217A9.977 9.977 0 0012.004 22C17.527 22 22 17.525 22 11.999 22 6.476 17.527 2.001 12.004 2.001z"/></svg>
-            </span>
-            واتساپ
-          </a>
-
-          <!-- ایتا -->
-          <a class="button eitaa" href="https://eitaa.com/Parseh_printing_center" target="_blank" rel="noopener noreferrer" aria-label="ایتا">
-            <span class="ico" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#fff"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,0.06)"/><path d="M7 12c0-2.76 2.24-5 5-5s5 2.24 5 5-2.24 5-5 5-5-2.24-5-5zm5 3.3c1.82 0 3.3-1.48 3.3-3.3S13.82 8 12 8s-3.3 1.48-3.3 3.3 1.48 3.3 3.3 3.3z" fill="#fff"/></svg>
-            </span>
-            ایتا
-          </a>
-
-          <!-- اینستاگرام (پایین وسط) -->
-          <a class="button instagram" href="https://www.instagram.com/parseh.printing?igsh=MXExbnQ3N3pwbzZ3aA==" target="_blank" rel="noopener noreferrer" aria-label="اینستاگرام">
-            <span class="ico" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 169 169" width="22" height="22" fill="#fff"><path d="M84.5 49.2c-19 0-34.4 15.4-34.4 34.4S65.5 118 84.5 118s34.4-15.4 34.4-34.4S103.5 49.2 84.5 49.2zM123 43.6a8.6 8.6 0 11-17.2 0 8.6 8.6 0 0117.2 0z"/></svg>
-            </span>
-            اینستاگرام
-          </a>
-
-        </div>
+    <!-- بالا چپ: گفت‌وگوی تلگرام -->
+    <a class="btn pos-top-left" href="https://t.me/parseh_printing_house" target="_blank" rel="noopener noreferrer" aria-label="گفتگوی تلگرام">
+      <div class="icon" aria-hidden="true">
+        <svg width="44" height="44" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" fill="none"><path d="M210 36L26 113c-10 3-10 8 0 11l45 14 16 50c2 7 5 9 11 6l38-27 62 45c11 6 19 3 22-10L230 46c3-13-4-19-20-10z" fill="#fff"/></svg>
       </div>
-    </div>
+      <div class="label">تلگرام — گفتگو</div>
+    </a>
+
+    <!-- پایین راست: واتساپ -->
+    <a class="btn pos-bottom-right" href="https://wa.me/qr/MSPU7UJQKM3PI1" target="_blank" rel="noopener noreferrer" aria-label="واتساپ">
+      <div class="icon" aria-hidden="true">
+        <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><path d="M20.52 3.48A11.95 11.95 0 0012 0C5.37 0 .02 5.36.02 12a11.9 11.9 0 002.07 6.58L0 24l5.6-1.46A11.95 11.95 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.19-3.48-8.52z" fill="#fff" opacity="0.06"/><path d="M12.004 2.001c-5.523 0-9.998 4.475-9.998 9.999 0 1.754.405 3.453 1.176 4.977L3 22l4.239-1.217A9.977 9.977 0 0012.004 22C17.527 22 22 17.525 22 11.999 22 6.476 17.527 2.001 12.004 2.001z" fill="#fff"/></svg>
+      </div>
+      <div class="label">واتساپ</div>
+    </a>
+
+    <!-- پایین وسط: اینستاگرام -->
+    <a class="btn pos-bottom-center" href="https://www.instagram.com/parseh.printing?igsh=MXExbnQ3N3pwbzZ3aA==" target="_blank" rel="noopener noreferrer" aria-label="اینستاگرام">
+      <div class="icon" aria-hidden="true">
+        <svg width="40" height="40" viewBox="0 0 169 169" xmlns="http://www.w3.org/2000/svg" fill="none"><path d="M84.5 49.2c-19 0-34.4 15.4-34.4 34.4S65.5 118 84.5 118s34.4-15.4 34.4-34.4S103.5 49.2 84.5 49.2zM123 43.6a8.6 8.6 0 11-17.2 0 8.6 8.6 0 0117.2 0z" fill="#fff"/></svg>
+      </div>
+      <div class="label">اینستاگرام</div>
+    </a>
+
+    <!-- پایین چپ: ایتا -->
+    <a class="btn pos-bottom-left" href="https://eitaa.com/Parseh_printing_center" target="_blank" rel="noopener noreferrer" aria-label="ایتا">
+      <div class="icon" aria-hidden="true">
+        <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,0.06)"/><path d="M7 12c0-2.76 2.24-5 5-5s5 2.24 5 5-2.24 5-5 5-5-2.24-5-5zm5 3.3c1.82 0 3.3-1.48 3.3-3.3S13.82 8 12 8s-3.3 1.48-3.3 3.3 1.48 3.3 3.3 3.3z" fill="#fff"/></svg>
+      </div>
+      <div class="label">ایتا</div>
+    </a>
+
   </div>
+
+  <script>
+    // نکتهٔ کوچک: ibb.co گاهی صفحهٔ مشاهده می‌دهد نه لینک مستقیم تصویر.
+    // اگر پس‌زمینه نمایش داده نشد، لینک مستقیم تصویر را جایگزین مقدار background-image در CSS بالا کنید.
+    // نمونهٔ لینک مستقیم معمولی برای ibb: https://i.ibb.co/XXXX/your-image.jpg
+    (function(){
+      // بررسی کنیم آیا پس‌زمینه لود شده یا نه — اگر URL صفحه بود (نه تصویر)، هشدار در کنسول بنویسیم:
+      const el = document.querySelector('.poster');
+      const bg = getComputedStyle(el).backgroundImage;
+      if(bg.includes('ibb.co') && !bg.match(/\.(jpg|jpeg|png|webp|svg)/i)){
+        console.warn('ممکن است آدرس پس‌زمینه صفحهٔ ibb.co باشد نه تصویر مستقیم. اگر پس‌زمینه نمایش داده نمی‌شود، از لینک مستقیم تصویر استفاده کنید (https://i.ibb.co/...).');
+      }
+    })();
+  </script>
 </body>
 </html>
