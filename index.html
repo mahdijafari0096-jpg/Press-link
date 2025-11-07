@@ -41,18 +41,19 @@
     opacity: 1;
   }
 
-  .icon i {
-    font-size: 30px;
+  .icon i, .icon img {
+    width: 30px;
+    height: 30px;
   }
 
   /* 📍 موقعیت آیکون‌ها */
   .telegram-channel {
-    top: 65%;   
+    top: 65%;
     right: 10%;
   }
 
   .telegram-chat {
-    top: 65%;   
+    top: 65%;
     left: 10%;
   }
 
@@ -63,12 +64,17 @@
 
   .instagram {
     bottom: 20%;
-    left: 35%;   /* ← ۵٪ به سمت چپ‌تر از قبل */
+    left: 35%;
   }
 
   .eitaa {
     bottom: 20%;
-    left: 5%;   
+    left: 5%;
+  }
+
+  /* ✅ تنظیم رنگ لوگو ایتا سفید */
+  .eitaa img {
+    filter: brightness(0) invert(1); /* سفید کردن تصویر */
   }
 </style>
 </head>
@@ -87,7 +93,7 @@
       <i class="fa-brands fa-instagram"></i> اینستاگرام
     </a>
     <a href="https://eitaa.com/Parseh_printing_center" class="icon eitaa" target="_blank">
-      <i class="fa-solid fa-paper-plane"></i> ایتا
+      <img src="https://i.postimg.cc/BvMws7Rc/03.png" alt="Eitaa Logo"> ایتا
     </a>
   </div>
 </body>
