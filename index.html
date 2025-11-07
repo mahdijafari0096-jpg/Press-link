@@ -38,8 +38,8 @@
     transition: all 0.3s ease;
     backdrop-filter: blur(4px);
     background-color: rgba(0,0,0,0.3);
-    top: 53%;    /* مختصات دکمه گفتگوی تلگرام */
-    left: 0%;    /* مختصات دکمه گفتگوی تلگرام */
+    top: 53%;
+    left: 0%;
   }
 
   .link-btn img {
@@ -53,8 +53,11 @@
     background-color: currentColor;
   }
 
-  /* --- رنگ هر دکمه --- */
-  .telegram-channel { color: #0088cc; }
+  /* رنگ‌ها */
+  .telegram-channel { 
+    color: #0088cc; 
+    top: calc(53% + 15%); /* ۱۵٪ پایین‌تر از بقیه */
+  }
   .telegram-chat { color: #0088cc; }
   .whatsapp { color: #25d366; }
   .instagram { color: #c13584; }
