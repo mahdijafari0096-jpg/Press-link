@@ -26,67 +26,71 @@
 
   .icon {
     position: absolute;
-    font-size: 24px;
+    font-size: 22px;
     text-decoration: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
-    opacity: 0.95;
+    border: 2px solid currentColor;
+    border-radius: 50px;
+    padding: 10px 18px;
+    transition: all 0.3s ease;
     font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
   }
 
   .icon:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
+    background-color: currentColor;
     color: white;
-    opacity: 1;
   }
 
   .icon i, .icon img {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
   }
 
-  /* 📍 موقعیت آیکون‌ها */
+  /* 📍 موقعیت آیکون‌ها و رنگ قاب */
   .telegram-channel {
-    top: 75%;
+    top: 78%;
     right: 10%;
-    color: #229ED9; /* آبی تلگرام */
+    color: #229ED9;
   }
 
   .telegram-chat {
-    top: 75%;
+    top: 78%;
     left: 10%;
-    color: #229ED9; /* آبی تلگرام */
+    color: #229ED9;
   }
 
   .whatsapp {
-    bottom: 30%;
+    bottom: 33%;
     right: 10%;
-    color: #25D366; /* سبز واتساپ */
+    color: #25D366;
   }
 
   .instagram {
-    bottom: 30%;
+    bottom: 33%;
     left: 35%;
-    color: #C13584; /* بنفش اینستاگرام */
+    color: #C13584;
   }
 
   .eitaa {
-    bottom: 30%;
+    bottom: 33%;
     left: 5%;
-    color: #FF7A00; /* نارنجی پرتقالی ایتا */
+    color: #FF7A00;
   }
 
   .eitaa img {
-    filter: brightness(0) invert(1); /* سفید کردن در hover */
-    width: 30px;
-    height: 30px;
-    transition: filter 0.3s ease;
+    width: 26px;
+    height: 26px;
+    filter: brightness(0) invert(1);
   }
 
   .eitaa:hover img {
-    filter: none;
+    filter: brightness(1);
   }
 </style>
 </head>
