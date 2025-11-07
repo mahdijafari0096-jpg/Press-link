@@ -38,8 +38,6 @@
     transition: all 0.3s ease;
     backdrop-filter: blur(4px);
     background-color: rgba(0,0,0,0.3);
-    top: 53%;
-    left: 0%;
   }
 
   .link-btn img {
@@ -53,15 +51,39 @@
     background-color: currentColor;
   }
 
-  /* رنگ‌ها */
+  /* رنگ‌ها و موقعیت‌ها */
   .telegram-channel { 
     color: #0088cc; 
-    top: calc(53% + 5%); /* ۱۰٪ بالاتر از حالت قبلی (قبلاً +15٪ بود) */
+    top: calc(53% + 6.5%); /* قبلاً +5% بود → اکنون 1.5% پایین‌تر */
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
-  .telegram-chat { color: #0088cc; }
-  .whatsapp { color: #25d366; }
-  .instagram { color: #c13584; }
-  .eitaa { color: #ff8800; }
+
+  .telegram-chat { 
+    color: #0088cc; 
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .whatsapp { 
+    color: #25d366;
+    bottom: 10%;
+    right: 25%;
+  }
+
+  .instagram { 
+    color: #c13584;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .eitaa { 
+    color: #ff8800;
+    bottom: 10%;
+    left: 25%;
+  }
 
   @media (max-width: 768px) {
     .link-btn {
