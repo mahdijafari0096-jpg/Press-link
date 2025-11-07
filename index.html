@@ -56,39 +56,23 @@
     background-color: currentColor;
   }
 
-  /* 📍 موقعیت‌ها و رنگ‌ها */
-  .telegram-channel { 
-    color: #0088cc; 
-    top: calc(53% + 11%);
-    left: calc(50% - 29%); /* قبلاً 28% بود → 1% به چپ‌تر */
-    transform: translate(-50%, -50%);
-  }
-
-  .telegram-chat { 
-    color: #0088cc; 
-    top: calc(53% + 5.5%);
-    left: calc(50% - 28%);
-    transform: translate(-50%, -50%);
-  }
-
-  .whatsapp { 
-    color: #25d366;
-    bottom: 10%;
-    right: 25%;
-  }
-
-  .instagram { 
-    color: #c13584;
-    bottom: 8%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
+  /* 📍 همه در مختصات دکمه تلگرام کانال */
+  .telegram-channel,
+  .telegram-chat,
+  .whatsapp,
+  .instagram,
   .eitaa { 
-    color: #ff8800;
-    bottom: 10%;
-    left: 25%;
+    top: calc(53% + 11%);
+    left: calc(50% - 29%);
+    transform: translate(-50%, -50%);
   }
+
+  /* 🎨 رنگ‌های هر دکمه */
+  .telegram-channel { color: #0088cc; }
+  .telegram-chat { color: #0088cc; }
+  .whatsapp { color: #25d366; }
+  .instagram { color: #c13584; }
+  .eitaa { color: #ff8800; }
 
   @media (max-width: 768px) {
     .link-btn {
