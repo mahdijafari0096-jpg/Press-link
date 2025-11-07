@@ -1,131 +1,128 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Parseh Links</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
   body {
     margin: 0;
-    padding: 0;
     height: 100vh;
-    background: url('https://i.postimg.cc/Xvd3tRj4/56.jpg') no-repeat center center fixed;
+    background: url("https://i.postimg.cc/Xvd3tRj4/56.jpg") no-repeat center center fixed;
     background-size: cover;
+    font-family: "Vazirmatn", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Vazirmatn", sans-serif;
   }
 
   .container {
     position: relative;
     width: 100%;
+    max-width: 800px;
     height: 100%;
   }
 
-  /* 🎯 تنظیم ظاهر کلی دکمه‌ها */
-  .icon {
+  .link-btn {
     position: absolute;
-    font-size: 20px;
-    text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
     border: 2px solid currentColor;
-    border-radius: 50px;
+    border-radius: 12px;
+    padding: 10px 20px;
     transition: all 0.3s ease;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.25);
-    color: white;
+    backdrop-filter: blur(4px);
   }
 
-  .icon:hover {
-    transform: scale(1.1);
-    background-color: currentColor;
-    color: white;
-  }
-
-  .icon i, .icon img {
-    width: 24px;
-    height: 24px;
-  }
-
-  /* 📍 موقعیت و اندازه دکمه‌ها */
-  .telegram-channel {
-    top: 78%;
-    right: 10%;
-    width: 192px; /* 10px کوچک‌تر */
-    height: 40px;
-    color: #229ED9;
-  }
-
-  .telegram-chat {
-    top: 78%;
-    left: 10%;
-    width: 192px; /* 10px کوچک‌تر */
-    height: 40px;
-    color: #229ED9;
-  }
-
-  .whatsapp {
-    bottom: 33%;
-    right: 8%;
-    width: 194px; /* 8px کوچک‌تر */
-    height: 40px;
-    color: #25D366;
-  }
-
-  .instagram {
-    bottom: 25%;
-    left: 27%; /* 8% به چپ‌تر */
-    width: 202px;
-    height: 42px;
-    color: #C13584;
-  }
-
-  .eitaa {
-    bottom: 33%;
-    left: 7%; /* 8% به چپ‌تر */
-    width: 194px; /* 8px کوچک‌تر */
-    height: 40px;
-    color: #FF7A00;
-  }
-
-  /* 🔸 تنظیم دقیق آیکون تصویری ایتا */
-  .eitaa img {
+  .link-btn img {
     width: 28px;
     height: 28px;
     filter: brightness(0) invert(1);
-    vertical-align: middle;
   }
 
-  .eitaa:hover img {
-    filter: brightness(1);
+  .link-btn:hover {
+    transform: scale(1.07);
+  }
+
+  /* --- دکمه‌ها --- */
+  .telegram-channel {
+    color: #0088cc;
+    width: 183px;
+    top: 35%;
+    right: 20%;
+  }
+
+  .telegram-chat {
+    color: #0088cc;
+    width: 180px;
+    top: 35%;
+    left: 20%;
+  }
+
+  .whatsapp {
+    color: #25d366;
+    width: 180px;
+    bottom: 15%;
+    right: 28%;
+  }
+
+  .instagram {
+    color: #c32aa3;
+    width: 180px;
+    bottom: 15%;
+    left: 42%;
+  }
+
+  .eitaa {
+    color: #ff8800;
+    width: 180px;
+    bottom: 15%;
+    left: 18%;
+  }
+
+  @media (max-width: 768px) {
+    .link-btn {
+      font-size: 16px;
+      padding: 8px 14px;
+    }
+    .link-btn img {
+      width: 24px;
+      height: 24px;
+    }
   }
 </style>
 </head>
+
 <body>
   <div class="container">
-    <a href="https://t.me/parsehprintinghouse" class="icon telegram-channel" target="_blank">
-      <i class="fa-brands fa-telegram"></i> کانال تلگرام
+    <a href="https://t.me/parsehprintinghouse" class="link-btn telegram-channel">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Channel" />
+      کانال تلگرام
     </a>
 
-    <a href="https://t.me/parseh_printing_house" class="icon telegram-chat" target="_blank">
-      <i class="fa-brands fa-telegram"></i> گفتگوی تلگرام
+    <a href="https://t.me/parseh_printing_house" class="link-btn telegram-chat">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Chat" />
+      گفتگوی تلگرام
     </a>
 
-    <a href="https://wa.me/qr/MSPU7UJQKM3PI1" class="icon whatsapp" target="_blank">
-      <i class="fa-brands fa-whatsapp"></i> واتساپ
+    <a href="https://wa.me/qr/MSPU7UJQKM3PI1" class="link-btn whatsapp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      واتساپ
     </a>
 
-    <a href="https://www.instagram.com/parseh.printing?igsh=MXExbnQ3N3pwbzZ3aA==" class="icon instagram" target="_blank">
-      <i class="fa-brands fa-instagram"></i> اینستاگرام
+    <a href="https://www.instagram.com/parseh.printing?igsh=MXExbnQ3N3pwbzZ3aA==" class="link-btn instagram">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+      اینستاگرام
     </a>
 
-    <a href="https://eitaa.com/Parseh_printing_center" class="icon eitaa" target="_blank">
-      <img src="https://i.postimg.cc/BvMws7Rc/03.png" alt="Eitaa Logo"> ایتا
+    <a href="https://eitaa.com/Parseh_printing_center" class="link-btn eitaa">
+      <img src="https://i.postimg.cc/BvMws7Rc/03.png" alt="Eitaa" />
+      ایتا
     </a>
   </div>
 </body>
