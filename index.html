@@ -1,90 +1,94 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>پارسه چاپ</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parseh Links</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url('https://i.postimg.cc/Xvd3tRj4/56.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Vazirmatn", sans-serif;
+  }
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Vazirmatn', sans-serif;
-      background: url('https://i.postimg.cc/Xvd3tRj4/56.jpg') no-repeat center center fixed;
-      background-size: cover;
-      height: 100vh;
-      overflow: hidden;
-      color: white;
-      position: relative;
-    }
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
 
-    .icon-link {
-      position: absolute;
-      text-decoration: none;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 18px;
-      transition: transform 0.3s;
-    }
+  .icon {
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.9;
+  }
 
-    .icon-link:hover {
-      transform: scale(1.1);
-    }
+  .icon:hover {
+    transform: scale(1.2);
+    opacity: 1;
+  }
 
-    .icon-link img {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 8px;
-      filter: brightness(0) invert(1);
-    }
+  .icon i {
+    font-size: 30px;
+  }
 
-    /* 🔹 موقعیت دقیق آیکون‌ها (اصلاح‌شده) */
-    .telegram-channel { top: 65%; right: 10%; }  /* 15% پایین‌تر */
-    .telegram-chat { top: 65%; left: 10%; }      /* 15% پایین‌تر */
-    .whatsapp { bottom: 25%; right: 10%; }       /* 15% بالاتر */
-    .instagram { bottom: 23%; left: 50%; transform: translateX(-50%); } /* 15% بالاتر */
-    .eitaa { bottom: 25%; left: 10%; }           /* 15% بالاتر */
+  /* موقعیت آیکون‌ها */
+  .telegram-channel {
+    top: 35%;
+    right: 10%;
+  }
 
-    @media (max-width: 768px) {
-      .icon-link img { width: 60px; height: 60px; }
-      .icon-link { font-size: 16px; }
-      .telegram-channel { top: 60%; right: 8%; }
-      .telegram-chat { top: 60%; left: 8%; }
-      .whatsapp { bottom: 20%; right: 8%; }
-      .instagram { bottom: 18%; left: 50%; transform: translateX(-50%); }
-      .eitaa { bottom: 20%; left: 8%; }
-    }
-  </style>
+  .telegram-chat {
+    top: 35%;
+    left: 10%;
+  }
+
+  .whatsapp {
+    bottom: 20%;
+    right: 10%;
+  }
+
+  .instagram {
+    bottom: 20%;
+    left: 45%;
+  }
+
+  .eitaa {
+    bottom: 20%;
+    left: 10%;
+  }
+</style>
 </head>
 <body>
-
-  <a href="https://t.me/parsehprintinghouse" class="icon-link telegram-channel" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram Channel" />
-    کانال تلگرام
-  </a>
-
-  <a href="https://t.me/parseh_printing_house" class="icon-link telegram-chat" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram Chat" />
-    گفت‌وگوی تلگرام
-  </a>
-
-  <a href="https://wa.me/qr/MSPU7UJQKM3PI1" class="icon-link whatsapp" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
-    واتساپ
-  </a>
-
-  <a href="https://www.instagram.com/parseh.printing?igsh=MXExbnQ3N3pwbzZ3aA==" class="icon-link instagram" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
-    اینستاگرام
-  </a>
-
-  <a href="https://eitaa.com/Parseh_printing_center" class="icon-link eitaa" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Eitaa_Logo.svg" alt="Eitaa" />
-    ایتا
-  </a>
-
+  <div class="container">
+    <a href="https://t.me/parsehprintinghouse" class="icon telegram-channel" target="_blank">
+      <i class="fa-brands fa-telegram"></i> کانال تلگرام
+    </a>
+    <a href="https://t.me/parseh_printing_house" class="icon telegram-chat" target="_blank">
+      <i class="fa-brands fa-telegram"></i> گفتگوی تلگرام
+    </a>
+    <a href="https://wa.me/qr/MSPU7UJQKM3PI1" class="icon whatsapp" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> واتساپ
+    </a>
+    <a href="https://www.instagram.com/parseh.printing?igsh=MXExbnQ3N3pwbzZ3aA==" class="icon instagram" target="_blank">
+      <i class="fa-brands fa-instagram"></i> اینستاگرام
+    </a>
+    <a href="https://eitaa.com/Parseh_printing_center" class="icon eitaa" target="_blank">
+      <i class="fa-solid fa-paper-plane"></i> ایتا
+    </a>
+  </div>
 </body>
 </html>
