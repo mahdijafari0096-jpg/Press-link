@@ -2,18 +2,25 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>Parseh Links</title>
 <style>
-  body {
+  html, body {
     margin: 0;
-    height: 100vh;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* جلوگیری از اسکرول */
+  }
+
+  body {
     background: url("https://i.postimg.cc/Xvd3tRj4/56.jpg") no-repeat center center fixed;
     background-size: cover;
     font-family: "Vazirmatn", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: scale(1);
+    transform-origin: center;
   }
 
   .container {
@@ -51,18 +58,18 @@
     background-color: currentColor;
   }
 
-  /* رنگ‌ها و موقعیت‌ها */
+  /* موقعیت‌ها و رنگ‌ها */
   .telegram-channel { 
     color: #0088cc; 
-    top: calc(53% + 16%); /* قبلاً 6% → 10% پایین‌تر */
-    left: calc(50% - 60%); /* ۶۰٪ به چپ */
+    top: calc(53% + 16%);
+    left: calc(50% - 60%);
     transform: translate(-50%, -50%);
   }
 
   .telegram-chat { 
     color: #0088cc; 
-    top: calc(53% + 10.5%); /* قبلاً 0.5% → 10% پایین‌تر */
-    left: calc(50% - 60%); /* ۶۰٪ به چپ */
+    top: calc(53% + 10.5%);
+    left: calc(50% - 60%);
     transform: translate(-50%, -50%);
   }
 
