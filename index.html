@@ -26,18 +26,19 @@
 
   .icon {
     position: absolute;
-    color: white;
     font-size: 24px;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0.9;
+    transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+    opacity: 0.95;
+    font-weight: bold;
   }
 
   .icon:hover {
-    transform: scale(1.2);
+    transform: scale(1.15);
+    color: white;
     opacity: 1;
   }
 
@@ -48,33 +49,44 @@
 
   /* 📍 موقعیت آیکون‌ها */
   .telegram-channel {
-    top: 65%;
+    top: 75%;
     right: 10%;
+    color: #229ED9; /* آبی تلگرام */
   }
 
   .telegram-chat {
-    top: 65%;
+    top: 75%;
     left: 10%;
+    color: #229ED9; /* آبی تلگرام */
   }
 
   .whatsapp {
-    bottom: 20%;
+    bottom: 30%;
     right: 10%;
+    color: #25D366; /* سبز واتساپ */
   }
 
   .instagram {
-    bottom: 20%;
+    bottom: 30%;
     left: 35%;
+    color: #C13584; /* بنفش اینستاگرام */
   }
 
   .eitaa {
-    bottom: 20%;
+    bottom: 30%;
     left: 5%;
+    color: #FF7A00; /* نارنجی پرتقالی ایتا */
   }
 
-  /* ✅ تنظیم رنگ لوگو ایتا سفید */
   .eitaa img {
-    filter: brightness(0) invert(1); /* سفید کردن تصویر */
+    filter: brightness(0) invert(1); /* سفید کردن در hover */
+    width: 30px;
+    height: 30px;
+    transition: filter 0.3s ease;
+  }
+
+  .eitaa:hover img {
+    filter: none;
   }
 </style>
 </head>
