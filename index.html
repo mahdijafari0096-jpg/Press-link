@@ -9,7 +9,7 @@
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; /* جلوگیری از اسکرول */
+    overflow: hidden;
   }
 
   body {
@@ -19,8 +19,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: scale(1);
-    transform-origin: center;
   }
 
   .container {
@@ -58,18 +56,18 @@
     background-color: currentColor;
   }
 
-  /* موقعیت‌ها و رنگ‌ها */
+  /* 📍 موقعیت‌ها و رنگ‌ها */
   .telegram-channel { 
     color: #0088cc; 
-    top: calc(53% + 16%);
-    left: calc(50% - 60%);
+    top: calc(53% + 6%); /* قبلاً 16% بود → 10% بالاتر */
+    left: calc(50% - 45%); /* 15% به راست‌تر */
     transform: translate(-50%, -50%);
   }
 
   .telegram-chat { 
     color: #0088cc; 
-    top: calc(53% + 10.5%);
-    left: calc(50% - 60%);
+    top: calc(53% + 0.5%); /* قبلاً 10.5% بود → 10% بالاتر */
+    left: calc(50% - 45%); /* 15% به راست‌تر */
     transform: translate(-50%, -50%);
   }
 
