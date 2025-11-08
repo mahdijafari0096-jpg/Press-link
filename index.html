@@ -1,140 +1,121 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>Parseh Links</title>
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  body {
-    background: url("https://i.postimg.cc/Xvd3tRj4/56.jpg") no-repeat center center fixed;
-    background-size: cover;
-    font-family: "Vazirmatn", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    height: 100%;
-  }
-
-  .link-btn {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    color: white;
-    font-size: 18px;
-    text-decoration: none;
-    border: 3px solid currentColor;
-    border-radius: 50px;
-    padding: 14px 32px;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(4px);
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-
-  .link-btn img {
-    width: 32px;
-    height: 32px;
-    filter: brightness(0) invert(1);
-  }
-
-  .link-btn:hover {
-    transform: scale(1.08);
-    background-color: currentColor;
-  }
-
-  /* 📣 کانال تلگرام (۱۲٪ پایین‌تر) */
-  .telegram-channel {
-    top: calc(53% + 12%);
-    left: calc(50% - 29%);
-    transform: translate(-50%, -50%);
-    color: #0088cc;
-  }
-
-  /* 💬 گفتگوی تلگرام (پایه) */
-  .telegram-chat {
-    top: 53%;
-    left: calc(50% - 29%);
-    transform: translate(-50%, -50%);
-    color: #0088cc;
-  }
-
-  /* 🟢 واتساپ (۲۴٪ پایین‌تر) */
-  .whatsapp {
-    top: calc(53% + 24%);
-    left: calc(50% - 29%);
-    transform: translate(-50%, -50%);
-    color: #25d366;
-  }
-
-  /* 🟣 اینستاگرام (۳۶٪ پایین‌تر) */
-  .instagram {
-    top: calc(53% + 36%);
-    left: calc(50% - 29%);
-    transform: translate(-50%, -50%);
-    color: #c13584;
-  }
-
-  /* 🟠 ایتا (۵۶٪ پایین‌تر) */
-  .eitaa {
-    top: calc(53% + 56%);
-    left: calc(50% - 29%);
-    transform: translate(-50%, -50%);
-    color: #ff8800;
-  }
-
-  @media (max-width: 768px) {
-    .link-btn {
-      font-size: 16px;
-      padding: 10px 20px;
-      gap: 12px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مرکز چاپ پارسه</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url('https://i.postimg.cc/Xvd3tRj4/56.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Vazir', sans-serif;
+      overflow: hidden;
     }
-    .link-btn img {
-      width: 26px;
-      height: 26px;
+
+    .button-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      height: 100%;
     }
-  }
-</style>
+
+    .app-btn {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 25px;
+      font-size: 18px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s, opacity 0.3s;
+      opacity: 0.95;
+      border: 2px solid transparent;
+    }
+
+    .app-btn:hover {
+      transform: scale(1.08);
+      opacity: 1;
+    }
+
+    /* 📱 موقعیت و رنگ دکمه‌ها */
+    .telegram-channel {
+      background-color: #0088cc;
+      border-color: #0088cc;
+      top: 18%;   /* ۲٪ بالاتر */
+      right: 28%;
+    }
+
+    .telegram-chat {
+      background-color: #0088cc;
+      border-color: #0088cc;
+      top: 28%;   /* ۳٪ پایین‌تر */
+      left: 28%;
+    }
+
+    .whatsapp {
+      background-color: #25d366;
+      border-color: #25d366;
+      bottom: 25%;   /* ۵٪ بالاتر */
+      right: 28%;
+    }
+
+    .instagram {
+      background-color: #bc2a8d;
+      border-color: #bc2a8d;
+      bottom: 28%;   /* ۸٪ بالاتر */
+      left: 48%;
+    }
+
+    .eitaa {
+      background-color: #ff7f00;
+      border-color: #ff7f00;
+      bottom: 33%;   /* ۱۳٪ بالاتر */
+      left: 28%;
+    }
+
+    .app-btn img {
+      width: 28px;
+      height: 28px;
+      filter: brightness(0) invert(1);
+    }
+  </style>
 </head>
-
 <body>
-  <div class="container">
-    <a href="https://t.me/parsehprintinghouse" class="link-btn telegram-channel">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Channel" />
-      کانال تلگرام
+  <div class="button-container">
+    <!-- 🔹 تلگرام کانال -->
+    <a href="https://t.me/parsehprintinghouse" class="app-btn telegram-channel" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram"> کانال تلگرام
     </a>
 
-    <a href="https://t.me/parseh_printing_house" class="link-btn telegram-chat">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Chat" />
-      گفتگوی تلگرام
+    <!-- 🔹 تلگرام گفتگو -->
+    <a href="https://t.me/parseh_printing_house" class="app-btn telegram-chat" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Chat"> گفتگوی تلگرام
     </a>
 
-    <a href="https://wa.me/qr/MSPU7UJQKM3PI1" class="link-btn whatsapp">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-      واتساپ
+    <!-- 🔹 واتساپ -->
+    <a href="https://wa.me/qr/MSPU7UJQKM3PI1" class="app-btn whatsapp" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> واتساپ
     </a>
 
-    <a href="https://www.instagram.com/parseh.printing?igsh=MXExbnQ3N3pwbzZ3aA==" class="link-btn instagram">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
-      اینستاگرام
+    <!-- 🔹 اینستاگرام -->
+    <a href="https://www.instagram.com/parseh.printing?igsh=MXExbnQ3N3pwbzZ3aA==" class="app-btn instagram" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram"> اینستاگرام
     </a>
 
-    <a href="https://eitaa.com/Parseh_printing_center" class="link-btn eitaa">
-      <img src="https://i.postimg.cc/BvMws7Rc/03.png" alt="Eitaa" />
-      ایتا
+    <!-- 🔹 ایتا -->
+    <a href="https://eitaa.com/Parseh_printing_center" class="app-btn eitaa" target="_blank">
+      <img src="https://i.postimg.cc/BvMws7Rc/03.png" alt="Eitaa"> ایتا
     </a>
   </div>
 </body>
