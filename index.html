@@ -17,17 +17,18 @@
       align-items: center;
       font-family: 'Vazir', sans-serif;
       overflow: hidden;
+      transform: translateY(10%); /* ⬇️ همه‌ی دکمه‌ها ۱۰٪ پایین‌تر */
     }
 
     .app-btn {
-      width: 95%; /* دکمه‌ها تقریباً تمام عرض تصویر را می‌گیرند */
-      max-width: calc(100% - 15px); /* ۱۵ پیکسل کمتر از کل عرض */
+      width: 95%;
+      max-width: calc(100% - 15px);
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       padding: 14px 0;
-      margin: 9px 0; /* فاصله حدود ۰.۵ سانتی‌متر بین دکمه‌ها */
+      margin: 9px 0;
       border-radius: 35px;
       font-size: 20px;
       font-weight: bold;
@@ -50,34 +51,14 @@
     }
 
     /* 🎨 رنگ هر دکمه */
-    .telegram-chat {
-      background-color: #0088cc;
-      border-color: #0088cc;
-    }
-
-    .telegram-channel {
-      background-color: #229ed9;
-      border-color: #229ed9;
-    }
-
-    .whatsapp {
-      background-color: #25d366;
-      border-color: #25d366;
-    }
-
-    .instagram {
-      background-color: #bc2a8d;
-      border-color: #bc2a8d;
-    }
-
-    .eitaa {
-      background-color: #ff7f00;
-      border-color: #ff7f00;
-    }
+    .telegram-chat { background-color: #0088cc; border-color: #0088cc; }
+    .telegram-channel { background-color: #229ed9; border-color: #229ed9; }
+    .whatsapp { background-color: #25d366; border-color: #25d366; }
+    .instagram { background-color: #bc2a8d; border-color: #bc2a8d; }
+    .eitaa { background-color: #ff7f00; border-color: #ff7f00; }
   </style>
 </head>
 <body>
-  <!-- 🔹 دکمه‌ها به ترتیب زیر هم -->
   <a href="https://t.me/parseh_printing_house" class="app-btn telegram-chat" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram"> گفتگوی تلگرام
   </a>
