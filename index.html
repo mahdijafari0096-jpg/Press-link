@@ -24,7 +24,7 @@
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    transform: translateY(20%);
+    transform: translateY(22%); /* افزایش ۲٪ نسبت به نسخه قبل */
     overflow:hidden;
   }
 
@@ -32,9 +32,9 @@
     width:var(--btn-width);
     max-width:calc(100% - 15px);
     display:flex;
-    align-items:center;          /* وسط چین عمودی */
+    align-items:center;
     justify-content:center;
-    gap:12px;                    /* فاصله آیکون تا متن */
+    gap:12px;
     padding:14px 0;
     margin: var(--gap-vertical) 0;
     border-radius:35px;
@@ -55,7 +55,7 @@
   .instagram { background:#bc2a8d; border-color:#bc2a8d; }
   .eitaa { background:#ff7f00; border-color:#ff7f00; }
 
-  /* svg تنظیمات: همگی سفید، ثابت و وسط چین */
+  /* svg آیکون‌ها */
   .app-btn svg{
     width:var(--icon-size);
     height:var(--icon-size);
@@ -63,14 +63,12 @@
     display:block;
   }
   .app-btn svg *{
-    fill: #ffffff; /* آیکون سفید */
-    stroke: none;
+    fill:#ffffff;
+    stroke:none;
   }
 
-  /* متن */
   .app-btn span{ line-height:1; }
 
-  /* واکنش‌گرایی موبایل: متن و آیکون کمی ریزتر */
   @media (max-width:420px){
     :root{ --icon-size:22px; }
     .app-btn{ font-size:18px; padding:12px 0; border-radius:28px; }
@@ -79,43 +77,28 @@
 </head>
 <body>
 
-  <!-- 1. تلگرام گفتگو (آیکون paper-plane) -->
   <a class="app-btn telegram-chat" href="https://t.me/parseh_printing_house" target="_blank" rel="noopener">
-    <!-- inline SVG رسمی‌نما: paper plane -->
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
-      <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
-    </svg>
+    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
     <span>گفتگوی تلگرام</span>
   </a>
 
-  <!-- 2. تلگرام کانال -->
   <a class="app-btn telegram-channel" href="https://t.me/parsehprintinghouse" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
-      <path d="M2 21l20-9L2 3v7l14 2-14 2z"></path>
-    </svg>
+    <svg viewBox="0 0 24 24"><path d="M2 21l20-9L2 3v7l14 2-14 2z"/></svg>
     <span>کانال تلگرام</span>
   </a>
 
-  <!-- 3. واتساپ -->
   <a class="app-btn whatsapp" href="https://wa.me/qr/MSPU7UJQKM3PI1" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
-      <path d="M20.5 3.5A11.94 11.94 0 0012 0C5.373 0 .001 5.373.001 12 0 13.987.473 15.878 1.363 17.573L0 24l6.636-1.352A11.918 11.918 0 0012 24c6.627 0 12-5.373 12-12 0-1.931-.432-3.755-1.5-5.5zM12 21.5c-1.4 0-2.78-.28-4.04-.82L6 20l.92-1.96A9.5 9.5 0 012.5 12 9.5 9.5 0 1112 21.5zM17.2 14.8c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.66.15-.19.3-.74.98-.9 1.18-.17.2-.34.22-.64.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.19-.3.02-.46.14-.61.13-.13.28-.34.42-.5.14-.16.18-.28.28-.46.09-.19.05-.36-.03-.51-.08-.15-.66-1.6-.9-2.2-.23-.58-.46-.5-.63-.51l-.54-.01c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.98 2.64 1.12 2.82.14.18 1.94 2.98 4.7 4.33 3.3 1.7 3.3 1.13 3.9 1.06.6-.07 1.95-.8 2.23-1.57.28-.78.28-1.45.2-1.58-.08-.13-.28-.19-.58-.33z"></path>
-    </svg>
+    <svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.94 11.94 0 0012 0C5.373 0 .001 5.373.001 12 0 13.987.473 15.878 1.363 17.573L0 24l6.636-1.352A11.918 11.918 0 0012 24c6.627 0 12-5.373 12-12 0-1.931-.432-3.755-1.5-5.5zM12 21.5c-1.4 0-2.78-.28-4.04-.82L6 20l.92-1.96A9.5 9.5 0 012.5 12 9.5 9.5 0 1112 21.5zM17.2 14.8c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.66.15-.19.3-.74.98-.9 1.18-.17.2-.34.22-.64.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.19-.3.02-.46.14-.61.13-.13.28-.34.42-.5.14-.16.18-.28.28-.46.09-.19.05-.36-.03-.51-.08-.15-.66-1.6-.9-2.2-.23-.58-.46-.5-.63-.51l-.54-.01c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.98 2.64 1.12 2.82.14.18 1.94 2.98 4.7 4.33 3.3 1.7 3.3 1.13 3.9 1.06.6-.07 1.95-.8 2.23-1.57.28-.78.28-1.45.2-1.58-.08-.13-.28-.19-.58-.33z"/></svg>
     <span>واتساپ</span>
   </a>
 
-  <!-- 4. اینستاگرام -->
   <a class="app-btn instagram" href="https://www.instagram.com/parseh.printing?igsh=MXExbnQ3N3pwbzZ3aA==" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
-      <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.2A4.8 4.8 0 1016.8 13 4.8 4.8 0 0012 8.2zm6.4-2.6a1.2 1.2 0 11-1.2-1.2 1.2 1.2 0 011.2 1.2z"></path>
-    </svg>
+    <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.2A4.8 4.8 0 1016.8 13 4.8 4.8 0 0012 8.2zm6.4-2.6a1.2 1.2 0 11-1.2-1.2 1.2 1.2 0 011.2 1.2z"/></svg>
     <span>اینستاگرام</span>
   </a>
 
-  <!-- 5. ایتا (آیکونی ساده و سفید) -->
   <a class="app-btn eitaa" href="https://eitaa.com/Parseh_printing_center" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
-      <!-- یک آیکون ساده E در دایره (نماد نمایشی) -->
+    <svg viewBox="0 0 24 24">
       <circle cx="12" cy="12" r="10"></circle>
       <path d="M7 12h8v2H9v2H7z" fill="#fff"></path>
     </svg>
